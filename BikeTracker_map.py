@@ -5,7 +5,7 @@ import pydeck as pdk
 from datetime import datetime
 from geopy.geocoders import Nominatim
 
-st.set_page_config(layout="wide", page_title="Аналитика СИМ")
+st.set_page_config(layout="wide", page_title="BikeSpotter - мониторинг велопотока")
 
 SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQW_HFsvzJzCctICf5nIdonbSNujkQUuPbc9SepxI2GHeRF-xlWpVHBbSxxXjPKO3QdvxSRsekNBGRR/pub?output=csv"
 
