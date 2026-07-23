@@ -79,7 +79,14 @@ if not df.empty:
             if n == 1:
                 return 1.0
             duration_min = (group['dateTime'].max() - group['dateTime'].min()).total_seconds() / 60.0
-            return (n * 60.0) / max(duration_min, 1.0)
+            duration_min = max(duration_min, 1.0)
+
+            rate = (n * 60.0) / duration_min
+
+            if duration_min < 10.0:
+                rate *= 0.75
+        
+            return rate
 
         # Выбор логики: если выбраны события ИЛИ в типе события есть "парк"
         if map_mode == "Количество событий" or "парк" in str(event).lower():
